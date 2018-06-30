@@ -304,7 +304,7 @@ client.on('message', function(message) {
 
 
 client.on('message', message => {
- if(message.content.startsWith("prefix + kiss")) {
+ if(message.content.startsWith(prefix + 'kiss')) {
    let args = message.content.split(" ").slice(1);
     let hug = [
         "https://media.giphy.com/media/KH1CTZtw1iP3W/giphy.gif",
