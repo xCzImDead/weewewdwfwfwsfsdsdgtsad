@@ -303,7 +303,58 @@ client.on('message', function(message) {
 
 
 
-
+lient.on('message', message => {
+ if(message.content.startsWith("prefix + "kiss")) {
+   let args = message.content.split(" ").slice(1);
+    let hug = [
+        "https://media.giphy.com/media/KH1CTZtw1iP3W/giphy.gif",
+        "https://media.giphy.com/media/ZRSGWtBJG4Tza/giphy.gif",
+        "https://media.giphy.com/media/G3va31oEEnIkM/giphy.gif",
+        "https://media.giphy.com/media/nyGFcsP0kAobm/giphy.gif",
+        "https://media.giphy.com/media/kU586ictpGb0Q/giphy.gif",
+        "https://media.giphy.com/media/bm2O3nXTcKJeU/giphy.gif",
+        "https://media.giphy.com/media/BaEE3QOfm2rf2/giphy.gif",
+        "https://media.giphy.com/media/OSq9souL3j5zW/giphy.gif",
+        "https://media.giphy.com/media/vUrwEOLtBUnJe/giphy.gif",
+        "https://media.giphy.com/media/dP8ONh1mN8YWQ/giphy.gif",
+        "https://data.whicdn.com/images/271163043/original.gif",
+        "https://media.giphy.com/media/Ka2NAhphLdqXC/giphy.gif",
+        "https://media.giphy.com/media/zkppEMFvRX5FC/giphy.gif",
+        "https://media.giphy.com/media/wOtkVwroA6yzK/giphy.gif",
+        "https://media.giphy.com/media/flmwfIpFVrSKI/giphy.gif",
+        "https://media.giphy.com/media/mGAzm47irxEpG/giphy.gif",
+        "https://media.giphy.com/media/JynbO9pnGxPrO/giphy.gif",
+    ]
+    let hugresult = Math.floor((Math.random() * hug.length));
+    if (!args[0]) {
+        const ghembed = new Discord.RichEmbed()
+            .setColor(0xFF0000)
+            .setTitle(`${message.author.username} chu can't kiss yourself...! B-but there you go..`)
+            .setImage('http://gifimage.net/wp-content/uploads/2017/09/anime-forehead-kiss-gif-10.gif')
+        message.channel.send({
+            embed: ghembed
+        })
+        return;
+     }
+    if (!message.mentions.members.first().user.username === message.isMentioned(message.author)) {
+        const hembed = new Discord.RichEmbed()
+            .setColor(0xFF0000)
+            .setTitle(`${message.author.username} gave ${message.mentions.members.first().user.username} a kiss! How sweet!`)
+            .setImage(hug[hugresult])
+        message.channel.send({
+            embed: hembed
+        })
+        return;
+    }
+    const ghembed = new Discord.RichEmbed()
+        .setColor(0xFF0000)
+        .setTitle(`${message.author.username} chu can't kiss yourself...! B-but there you go..`)
+        .setImage('http://gifimage.net/wp-content/uploads/2017/09/anime-forehead-kiss-gif-10.gif')
+    message.channel.send({
+        embed: ghembed
+    })
+}
+});
 
 
 
