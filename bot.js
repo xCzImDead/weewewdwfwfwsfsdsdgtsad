@@ -303,7 +303,7 @@ client.on('message', function(message) {
 
 
 
-lient.on('message', message => {
+client.on('message', message => {
  if(message.content.startsWith("prefix + kiss")) {
    let args = message.content.split(" ").slice(1);
     let hug = [
