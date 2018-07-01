@@ -370,7 +370,7 @@ client.on('message', async message => {
     let hugEmbed = new Discord.RichEmbed()
     .setTitle("Hug! c:")
     .setDescription(`**${message.author.username}** hugged **${message.mentions.users.first().username}**!`)
-    .setImage('')
+    .setImage('https://cdn.discordapp.com/attachments/460166361625264140/462769611235000330/image.png,https://cdn.discordapp.com/attachments/460166361625264140/462769580750929921/image.jpg')
     .setColor("RANDOM")
     .setFooter("Panda", client.user.displayAvatarURL);
 
